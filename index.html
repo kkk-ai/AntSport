@@ -35,20 +35,39 @@
         </div>
     </div>
 
-    <a href="#" class="w-10 h-10 bg-white text-black rounded-full shadow-lg flex items-center justify-center hover:bg-gray-100 hover:scale-110 transition group relative">
-        <i class="fab fa-tiktok"></i>
-        <span class="absolute right-12 bg-gray-800 text-white text-xs py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition whitespace-nowrap pointer-events-none">Tiktok</span>
-    </a>
+    <!-- TikTok -->
+<a href="https://www.tiktok.com/@antsport3112"
+   target="_blank" rel="noopener noreferrer"
+   class="w-10 h-10 bg-white text-black rounded-full shadow-lg flex items-center justify-center hover:bg-gray-100 hover:scale-110 transition group relative">
+    <i class="fab fa-tiktok"></i>
+    <span class="absolute right-12 bg-gray-800 text-white text-xs py-1 px-2 rounded 
+                 opacity-0 group-hover:opacity-100 transition whitespace-nowrap pointer-events-none">
+        TikTok
+    </span>
+</a>
 
-    <a href="#" class="w-10 h-10 bg-white text-red-600 rounded-full shadow-lg flex items-center justify-center hover:bg-gray-100 hover:scale-110 transition group relative">
-        <i class="fab fa-youtube"></i>
-        <span class="absolute right-12 bg-gray-800 text-white text-xs py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition whitespace-nowrap pointer-events-none">Youtube</span>
-    </a>
+<!-- YouTube -->
+<a href="https://www.youtube.com/@ANTSPORT-lx"
+   target="_blank" rel="noopener noreferrer"
+   class="w-10 h-10 bg-white text-red-600 rounded-full shadow-lg flex items-center justify-center hover:bg-gray-100 hover:scale-110 transition group relative">
+    <i class="fab fa-youtube"></i>
+    <span class="absolute right-12 bg-gray-800 text-white text-xs py-1 px-2 rounded 
+                 opacity-0 group-hover:opacity-100 transition whitespace-nowrap pointer-events-none">
+        YouTube
+    </span>
+</a>
 
-    <a href="#" class="w-10 h-10 bg-white text-blue-600 rounded-full shadow-lg flex items-center justify-center hover:bg-gray-100 hover:scale-110 transition group relative">
-        <i class="fab fa-facebook"></i>
-        <span class="absolute right-12 bg-gray-800 text-white text-xs py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition whitespace-nowrap pointer-events-none">Facebook</span>
-    </a>
+<!-- Facebook -->
+<a href="https://www.facebook.com/share/g/17HVRzzi36/"
+   target="_blank" rel="noopener noreferrer"
+   class="w-10 h-10 bg-white text-blue-600 rounded-full shadow-lg flex items-center justify-center hover:bg-gray-100 hover:scale-110 transition group relative">
+    <i class="fab fa-facebook-f"></i>
+    <span class="absolute right-12 bg-gray-800 text-white text-xs py-1 px-2 rounded 
+                 opacity-0 group-hover:opacity-100 transition whitespace-nowrap pointer-events-none">
+        Facebook
+    </span>
+</a>
+
 
     <button onclick="toggleChat()" id="chat-btn" class="w-14 h-14 bg-red-600 text-white rounded-full shadow-2xl flex items-center justify-center text-2xl hover:scale-110 transition-all active:scale-95 group relative z-50">
         <i class="fas fa-comment-dots group-hover:hidden"></i>
@@ -255,6 +274,7 @@ function toggleChat() {
         .sport-gradient { background: linear-gradient(135deg, #e11d48 0%, #9f1239 100%); }
     </style>
 </head>
+
 <body class="bg-gray-50 text-gray-900">
 
   
@@ -370,26 +390,44 @@ function toggleChat() {
     
 
     <section id="danh-sach-khoa-hoc" class="bg-slate-900 py-24 text-white">
-        <div class="max-w-6xl mx-auto px-4 text-center">
-            <h2 class="text-3xl font-black mb-2 uppercase italic">Khoảnh khắc AntSport</h2>
-            <div class="w-24 h-1 bg-red-600 mx-auto mb-10"></div>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
-                <script>
-                    const sports = ['Football', 'Basketball', 'Swimming', 'Running', 'Gym', 'Tennis', 'Yoga', 'Karate'];
-                    for(let i=0; i<8; i++) {
-                        document.write(`
-                            <div class="relative overflow-hidden rounded-lg group h-64 shadow-md">
-                                <img src="https://source.unsplash.com/featured/?${sports[i % sports.length]},sport" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
-                                <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition flex items-end p-4">
-                                    <p class="text-white font-bold text-sm uppercase">${sports[i % sports.length]}</p>
-                                </div>
-                            </div>
-                        `);
-                    }
-                </script>
+  <div class="max-w-6xl mx-auto px-4 text-center">
+    <h2 class="text-3xl font-black mb-2 uppercase italic">Khoảnh khắc AntSport</h2>
+    <div class="w-24 h-1 bg-red-600 mx-auto mb-10"></div>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+      <script>
+        const gallery = [
+          { title: "Khoảnh khắc ĐT Việt Nam vỡ òa khi giành chức vô địch lịch sử", img: "Imanges/bd.jpg" },
+          { title: "Chàng trai vàng bóng rổ Việt Nam", img: "Imanges/bg.jpg" },
+          { title: "Khoảnh khắc kình ngư Việt Nam nỗ lực giành 2 HCV, phá kỷ lục SEA Games", img: "Imanges/boiloi.jpg" },
+          { title: "Khoảnh khắc về đích ấn tượng tại giải chạy đêm Hà Nội", img: "Imanges/chay.jpg" },
+          { title: "Lực sĩ Việt Nam vô địch cử tạ thế giới", img: "Imanges/lucsi.jpg" },
+          { title: "Khoảnh khắc ấn tượng từ các Tay Vợt Việt Nam tại 2 ngày đầu SEA Games 33", img: "Imanges/tenis.jpg" },
+          { title: "Ngày hội Yoga Dân Trí 5000 người đồng diễn tạo hình cờ Tổ quốc xác lập kỷ lục Việt Nam", img: "Imanges/yg.jpg" },
+          { title: "Khoảnh khắc Đội tuyển Karate Nữ Việt Nam giành HCV tại ASIAD 19", img: "Imanges/asiad.jpg" }
+        ];
+
+        gallery.forEach(item => {
+          document.write(`
+            <div class="relative overflow-hidden rounded-lg group h-64 shadow-md">
+              <img src="${item.img}" 
+                   alt="${item.title}"
+                   class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+
+              <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent 
+                          opacity-0 group-hover:opacity-100 transition flex items-end p-4">
+                <p class="text-white font-bold text-sm uppercase">
+                  ${item.title}
+                </p>
+              </div>
             </div>
-        </div>
-    </section>
+          `);
+        });
+      </script>
+    </div>
+  </div>
+</section>
+
 	
 	<section class="py-16 bg-white">
         <div class="max-w-4xl mx-auto px-4">
@@ -411,37 +449,47 @@ function toggleChat() {
 	
 	
 	<section class="bg-slate-900 py-16 text-white">
-        <div class="max-w-6xl mx-auto px-4">
-            <h2 class="text-3xl font-black mb-10 border-l-8 border-red-600 pl-4 uppercase italic">Khóa học nổi bật</h2>
-            <div class="grid md:grid-cols-3 gap-8">
-                <script>
-                    const courses = [
-                        {name: "Bóng đá căn bản", price: "1.200.000đ", img: "soccer"},
-                        {name: "Kỹ thuật bơi lội", price: "2.500.000đ", img: "swimming"},
-                        {name: "Bóng rổ tăng chiều cao", price: "1.800.000đ", img: "basketball"},
-                        {name: "Võ thuật thiếu nhi", price: "1.000.000đ", img: "karate"},
-                        {name: "Cầu lông chuyên nghiệp", price: "1.500.000đ", img: "badminton"},
-                        {name: "Yoga phục hồi", price: "2.000.000đ", img: "yoga"}
-                    ];
-                    courses.forEach(c => {
-                        document.write(`
-                            <div class="bg-slate-800 rounded-2xl overflow-hidden hover:-translate-y-2 transition duration-300 group">
-                                <div class="relative">
-                                    <img src="https://source.unsplash.com/featured/?${c.img}" class="w-full h-56 object-cover opacity-80 group-hover:opacity-100">
-                                    <span class="absolute top-4 right-4 bg-red-600 text-white text-xs font-black px-3 py-1 rounded-full uppercase italic">Hot</span>
-                                </div>
-                                <div class="p-6">
-                                    <h3 class="text-xl font-black mb-2 uppercase">${c.name}</h3>
-                                    <p class="text-red-500 font-bold text-lg mb-4">${c.price}/tháng</p>
-                                    <button class="w-full border-2 border-red-600 text-red-600 hover:bg-red-600 hover:text-white font-bold py-2 rounded-lg transition">Xem chi tiết</button>
-                                </div>
-                            </div>
-                        `);
-                    });
-                </script>
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="text-3xl font-black mb-10 border-l-8 border-red-600 pl-4 uppercase italic">
+      Khóa học nổi bật
+    </h2>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <script>
+        const courses = [
+          {name: "Bóng đá căn bản", price: "1.200.000đ", img: "Imanges/soccer.jpg"},
+          {name: "Kỹ thuật bơi lội", price: "2.500.000đ", img: "Imanges/swimming.jpg"},
+          {name: "Bóng rổ tăng chiều cao", price: "1.800.000đ", img: "Imanges/basketball.jpg"},
+          {name: "Võ thuật thiếu nhi", price: "1.000.000đ", img: "Imanges/karate.jpg"},
+          {name: "Cầu lông chuyên nghiệp", price: "1.500.000đ", img: "Imanges/badminton.jpg"},
+          {name: "Yoga phục hồi", price: "2.000.000đ", img: "Imanges/yoga.jpg"}
+        ];
+
+        courses.forEach(c => {
+          document.write(`
+            <div class="bg-slate-800 rounded-2xl overflow-hidden hover:-translate-y-2 transition duration-300 group">
+              <div class="relative">
+                <img src="${c.img}" 
+                     class="w-full h-56 object-cover group-hover:scale-110 transition duration-500">
+                <span class="absolute top-4 right-4 bg-red-600 text-white text-xs font-black px-3 py-1 rounded-full uppercase italic">
+                  Hot
+                </span>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-black mb-2 uppercase">${c.name}</h3>
+                <p class="text-red-500 font-bold text-lg mb-4">${c.price}/tháng</p>
+                <button class="w-full border-2 border-red-600 text-red-600 hover:bg-red-600 hover:text-white font-bold py-2 rounded-lg transition">
+                  Xem chi tiết
+                </button>
+              </div>
             </div>
-        </div>
-    </section>
+          `);
+        });
+      </script>
+    </div>
+  </div>
+</section>
+
 	
 	<section id="dang-ky-lo-trinh" class="max-w-6xl mx-auto py-24 px-4 grid md:grid-cols-3 gap-8">
         <div class="md:col-span-2 bg-white p-8 shadow-2xl rounded-xl border-b-8 border-red-600">
@@ -508,13 +556,34 @@ function toggleChat() {
                 </ul>
             </div>
             <div>
-                <h4 class="text-lg font-bold mb-6 text-white uppercase border-b border-red-600 inline-block">Kết nối</h4>
-                <div class="flex space-x-4 text-2xl">
-                    <i class="fab fa-facebook hover:text-red-500 cursor-pointer transition"></i>
-                    <i class="fab fa-youtube hover:text-red-500 cursor-pointer transition"></i>
-                    <i class="fab fa-tiktok hover:text-red-500 cursor-pointer transition"></i>
-                </div>
-            </div>
+			  <h4 class="text-lg font-bold mb-6 text-white uppercase border-b border-red-600 inline-block">
+				Kết nối
+			  </h4>
+
+			  <div class="flex space-x-4 text-2xl">
+				<!-- Facebook -->
+				<a href="https://www.facebook.com/share/g/17HVRzzi36/
+				   target="_blank" rel="noopener noreferrer"
+				   class="hover:text-red-500 transition">
+				  <i class="fab fa-facebook"></i>
+				</a>
+
+				<!-- YouTube -->
+				<a href="https://www.youtube.com/@ANTSPORT-lx"
+				   target="_blank" rel="noopener noreferrer"
+				   class="hover:text-red-500 transition">
+				  <i class="fab fa-youtube"></i>
+				</a>
+
+				<!-- TikTok -->
+				<a href="https://www.tiktok.com/@antsport3112"
+				   target="_blank" rel="noopener noreferrer"
+				   class="hover:text-red-500 transition">
+				  <i class="fab fa-tiktok"></i>
+				</a>
+			  </div>
+			</div>
+
         </div>
         <div class="text-center mt-12 pt-8 border-t border-gray-900 text-xs text-gray-500 uppercase tracking-widest">
             © 2024 AntSport - All rights reserved.
