@@ -389,7 +389,7 @@ function toggleChat() {
 
     
 
-    <section id="danh-sach-khoa-hoc" class="bg-slate-900 py-24 text-white">
+    <section  class="bg-slate-900 py-24 text-white">
   <div class="max-w-6xl mx-auto px-4 text-center">
     <h2 class="text-3xl font-black mb-2 uppercase italic">Khoảnh khắc AntSport</h2>
     <div class="w-24 h-1 bg-red-600 mx-auto mb-10"></div>
@@ -448,95 +448,325 @@ function toggleChat() {
     
 	
 	
-	<section class="bg-slate-900 py-16 text-white">
+	<!-- KHÓA HỌC NỔI BẬT -->
+<section id="khoa-hoc" class="bg-slate-900 py-16 text-white">
   <div class="max-w-6xl mx-auto px-4">
     <h2 class="text-3xl font-black mb-10 border-l-8 border-red-600 pl-4 uppercase italic">
       Khóa học nổi bật
     </h2>
 
-    <div class="grid md:grid-cols-3 gap-8">
-      <script>
-        const courses = [
-          {name: "Bóng đá căn bản", price: "1.200.000đ", img: "Imanges/soccer.jpg"},
-          {name: "Kỹ thuật bơi lội", price: "2.500.000đ", img: "Imanges/swimming.jpg"},
-          {name: "Bóng rổ tăng chiều cao", price: "1.800.000đ", img: "Imanges/basketball.jpg"},
-          {name: "Võ thuật thiếu nhi", price: "1.000.000đ", img: "Imanges/karate.jpg"},
-          {name: "Cầu lông chuyên nghiệp", price: "1.500.000đ", img: "Imanges/badminton.jpg"},
-          {name: "Yoga phục hồi", price: "2.000.000đ", img: "Imanges/yoga.jpg"}
-        ];
+    <!-- DANH SÁCH KHÓA HỌC -->
+    <div id="course-list" class="grid md:grid-cols-3 gap-8"></div>
 
-        courses.forEach(c => {
-          document.write(`
-            <div class="bg-slate-800 rounded-2xl overflow-hidden hover:-translate-y-2 transition duration-300 group">
-              <div class="relative">
-                <img src="${c.img}" 
-                     class="w-full h-56 object-cover group-hover:scale-110 transition duration-500">
-                <span class="absolute top-4 right-4 bg-red-600 text-white text-xs font-black px-3 py-1 rounded-full uppercase italic">
-                  Hot
-                </span>
-              </div>
-              <div class="p-6">
-                <h3 class="text-xl font-black mb-2 uppercase">${c.name}</h3>
-                <p class="text-red-500 font-bold text-lg mb-4">${c.price}/tháng</p>
-                <button class="w-full border-2 border-red-600 text-red-600 hover:bg-red-600 hover:text-white font-bold py-2 rounded-lg transition">
-                  Xem chi tiết
-                </button>
-              </div>
-            </div>
-          `);
-        });
-      </script>
+    <!-- NÚT XEM THÊM -->
+    <div class="text-center mt-10">
+      <button
+        id="btn-load-more"
+        class="border-2 border-red-600 text-red-600 hover:bg-red-600 hover:text-white font-bold px-8 py-3 rounded-lg transition"
+      >
+        Xem thêm
+      </button>
     </div>
   </div>
 </section>
 
-	
-	<section id="dang-ky-lo-trinh" class="max-w-6xl mx-auto py-24 px-4 grid md:grid-cols-3 gap-8">
-        <div class="md:col-span-2 bg-white p-8 shadow-2xl rounded-xl border-b-8 border-red-600">
-            <h2 class="text-3xl font-black mb-2 uppercase italic text-gray-800">Nhận lộ trình tập luyện</h2>
-            <p class="text-gray-500 mb-6">Để lại thông tin, chuyên gia AntSport sẽ gọi lại tư vấn khóa học phù hợp nhất với thể trạng của bạn.</p>
-            <form class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <input type="text" placeholder="Họ và tên học viên" class="bg-gray-100 border-none p-4 rounded-lg focus:ring-2 focus:ring-red-500 outline-none">
-                <input type="text" placeholder="Số điện thoại" class="bg-gray-100 border-none p-4 rounded-lg focus:ring-2 focus:ring-red-500 outline-none">
-                <select class="bg-gray-100 border-none p-4 rounded-lg col-span-1 md:col-span-2 focus:ring-2 focus:ring-red-500 outline-none">
-                    <option disabled selected>Bạn quan tâm đến môn thể thao nào?</option>
-                    <option>Bóng đá cộng đồng</option>
-                    <option>Bơi lội cơ bản & nâng cao</option>
-                    <option>Bóng rổ học đường</option>
-                    <option>Võ thuật tự vệ</option>
-                </select>
-                <textarea placeholder="Mục tiêu tập luyện của bạn (Vd: Giảm cân, tăng chiều cao...)" class="bg-gray-100 border-none p-4 rounded-lg col-span-1 md:col-span-2 h-28 outline-none focus:ring-2 focus:ring-red-500"></textarea>
-                <button class="sport-gradient text-white font-black py-4 rounded-lg hover:opacity-90 transition shadow-lg uppercase tracking-widest">Đăng ký ngay</button>
-            </form>
+<script>
+  const courses = [
+    { name: "Bóng đá căn bản", price: "1.200.000đ", img: "Imanges/soccer.jpg" },
+    { name: "Kỹ thuật bơi lội", price: "2.500.000đ", img: "Imanges/swimming.jpg" },
+    { name: "Bóng rổ tăng chiều cao", price: "1.800.000đ", img: "Imanges/basketball.jpg" },
+    { name: "Võ thuật thiếu nhi", price: "1.000.000đ", img: "Imanges/karate.jpg" },
+    { name: "Cầu lông chuyên nghiệp", price: "1.500.000đ", img: "Imanges/badminton.jpg" },
+    { name: "Yoga phục hồi", price: "2.000.000đ", img: "Imanges/yoga.jpg" },
+    { name: "Tennis ", price: "1.300.000đ", img: "Imanges/tennis.jpg" },
+    { name: "Bóng ném", price: "2.200.000đ", img: "Imanges/bm.jpg" },
+    { name: "Bóng chuyền", price: "1.400.000đ", img: "Imanges/bc.jpg" }
+  ];
+
+  const perPage = 3;
+  let currentIndex = 0;
+
+  const list = document.getElementById("course-list");
+  const btn = document.getElementById("btn-load-more");
+
+  function renderCourses() {
+    const slice = courses.slice(currentIndex, currentIndex + perPage);
+
+    slice.forEach(c => {
+      const div = document.createElement("div");
+      div.className =
+        "bg-slate-800 rounded-2xl overflow-hidden hover:-translate-y-2 transition duration-300 group";
+
+      div.innerHTML = `
+        <div class="relative">
+          <img src="${c.img}" 
+               class="w-full h-56 object-cover group-hover:scale-110 transition duration-500">
+          <span class="absolute top-4 right-4 bg-red-600 text-white text-xs font-black px-3 py-1 rounded-full uppercase italic">
+            Hot
+          </span>
         </div>
-        
-        <div class="space-y-6">
-            <div class="bg-slate-900 text-white p-8 rounded-xl shadow-lg">
-                <h3 class="font-black text-red-500 text-xl mb-4 uppercase italic">AntSport Hotline</h3>
-                <div class="flex items-center mb-4">
-                    <div class="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center mr-3">
-                        <i class="fas fa-phone-alt"></i>
-                    </div>
-                    <div>
-                        <p class="text-xs opacity-70">Tổng đài 24/7</p>
-                        <p class="font-bold text-lg">1900 88 99 00</p>
-                    </div>
-                </div>
-                <div class="flex items-center">
-                    <div class="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center mr-3">
-                        <i class="fas fa-map-marker-alt"></i>
-                    </div>
-                    <div>
-                        <p class="text-xs opacity-70">Trụ sở chính</p>
-                        <p class="font-bold">Quận 7, TP. Hồ Chí Minh</p>
-                    </div>
-                </div>
-            </div>
-            <div class="border-2 border-dashed border-gray-300 h-48 rounded-xl flex items-center justify-center text-gray-400">
-                <p class="text-center p-4 italic text-sm font-medium">Kết nối với cộng đồng 10.000+ học viên AntSport trên Facebook</p>
-            </div>
+        <div class="p-6">
+          <h3 class="text-xl font-black mb-2 uppercase">${c.name}</h3>
+          <p class="text-red-500 font-bold text-lg mb-4">${c.price}/tháng</p>
+          <button
+			  onclick="showDetail('${c.name}', '${c.price}', '${c.img}')"
+			  class="w-full border-2 border-red-600 text-red-600 hover:bg-red-600 hover:text-white font-bold py-2 rounded-lg transition"
+			>
+			  Xem chi tiết
+			</button>
+
         </div>
-    </section>
+      `;
+      list.appendChild(div);
+    });
+
+    currentIndex += perPage;
+
+    if (currentIndex >= courses.length) {
+      
+    }
+  }
+
+  btn.addEventListener("click", renderCourses);
+  renderCourses();
+</script>
+
+<section id="course-detail" class="bg-white py-16 hidden">
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="text-3xl font-black mb-10 border-l-8 border-red-600 pl-4 uppercase italic">
+      Chi tiết khóa học
+    </h2>
+
+    <div class="grid md:grid-cols-2 gap-10 items-center">
+      
+      <!-- BÊN TRÁI: HÌNH -->
+      <div>
+        <img id="detail-img" src="" class="rounded-2xl w-full h-80 object-cover shadow-lg">
+      </div>
+
+      <!-- BÊN PHẢI: THÔNG TIN -->
+      <div>
+        <h3 id="detail-name" class="text-2xl font-black mb-4"></h3>
+        <p id="detail-price" class="text-red-600 font-bold text-xl mb-4"></p>
+
+        <p class="mb-6 text-gray-700 leading-relaxed">
+          Khóa học giúp bé phát triển thể chất, tăng sự tự tin, rèn luyện kỹ năng vận động,
+          phù hợp với độ tuổi và được hướng dẫn bởi huấn luyện viên chuyên nghiệp.
+        </p>
+
+        <ul class="mb-6 list-disc pl-5 text-gray-700">
+          <li>Độ tuổi: 5 – 12 tuổi</li>
+          <li>Thời lượng: 12 buổi / tháng</li>
+          <li>Huấn luyện viên giàu kinh nghiệm</li>
+          <li>Môi trường an toàn – vui vẻ</li>
+        </ul>
+
+        <button
+          onclick="alert('Mở chatbot tư vấn khóa học')"
+          class="bg-red-600 text-white px-8 py-3 rounded-lg font-bold hover:bg-red-700 transition"
+        >
+          Nhận tư vấn ngay
+        </button>
+      </div>
+
+    </div>
+  </div>
+</section>
+<script>
+function showDetail(name, price, img) {
+  document.getElementById("detail-name").innerText = name;
+  document.getElementById("detail-price").innerText = price + "/tháng";
+  document.getElementById("detail-img").src = img;
+
+  const section = document.getElementById("course-detail");
+  section.classList.remove("hidden");
+
+  section.scrollIntoView({ behavior: "smooth" });
+}
+</script>
+
+
+
+
+
+	<section id="dang-ky-lo-trinh" class="w-full bg-black py-24 border-t border-gray-200">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="grid md:grid-cols-3 gap-8">
+
+      <!-- FORM -->
+      <div class="md:col-span-2 bg-white p-8 shadow-2xl rounded-xl border-b-8 border-red-600">
+        <h2 class="text-3xl font-black mb-2 uppercase italic text-gray-800">
+          Nhận lộ trình tập luyện
+        </h2>
+        <p class="text-gray-500 mb-6">
+          Để lại thông tin, chuyên gia AntSport sẽ gọi lại tư vấn khóa học phù hợp nhất với thể trạng của bạn.
+        </p>
+
+        <form class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <input type="text" placeholder="Họ và tên học viên"
+            class="bg-gray-100 p-4 rounded-lg focus:ring-2 focus:ring-red-500 outline-none">
+          <input type="text" placeholder="Số điện thoại"
+            class="bg-gray-100 p-4 rounded-lg focus:ring-2 focus:ring-red-500 outline-none">
+
+          <select
+            class="bg-gray-100 p-4 rounded-lg md:col-span-2 focus:ring-2 focus:ring-red-500 outline-none">
+            <option disabled selected>Bạn quan tâm đến môn thể thao nào?</option>
+            <option>Bóng đá cộng đồng</option>
+            <option>Bơi lội cơ bản & nâng cao</option>
+            <option>Bóng rổ học đường</option>
+            <option>Võ thuật tự vệ</option>
+          </select>
+
+          <textarea
+            placeholder="Mục tiêu tập luyện của bạn (Vd: Giảm cân, tăng chiều cao...)"
+            class="bg-gray-100 p-4 rounded-lg md:col-span-2 h-28 focus:ring-2 focus:ring-red-500 outline-none"></textarea>
+
+          <button
+            class="sport-gradient text-white font-black py-4 rounded-lg shadow-lg uppercase tracking-widest hover:opacity-90 transition md:col-span-2">
+            Đăng ký ngay
+          </button>
+        </form>
+      </div>
+
+      <!-- SIDEBAR -->
+      <div class="space-y-6">
+        <div class="bg-slate-900 text-white p-8 rounded-xl shadow-lg">
+          <h3 class="font-black text-red-500 text-xl mb-4 uppercase italic">
+            AntSport Hotline
+          </h3>
+
+          <div class="flex items-center mb-4">
+            <div class="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center mr-3">
+              <i class="fas fa-phone-alt"></i>
+            </div>
+            <div>
+              <p class="text-xs opacity-70">Tổng đài 24/7</p>
+              <p class="font-bold text-lg">1900 88 99 00</p>
+            </div>
+          </div>
+
+          <div class="flex items-center">
+            <div class="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center mr-3">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div>
+              <p class="text-xs opacity-70">Trụ sở chính</p>
+              <p class="font-bold">Quận 7, TP. Hồ Chí Minh</p>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="border-2 border-dashed border-gray-400 h-48 rounded-xl flex items-center justify-center text-gray-400">
+          <p class="text-center p-4 italic text-sm font-medium">
+            Kết nối với cộng đồng 10.000+ học viên AntSport trên Facebook
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+	<section id="news" class="bg-white py-20">
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="text-3xl font-black mb-10 border-l-8 border-red-600 pl-4 uppercase italic text-gray-900">
+      Tin tức thể thao
+    </h2>
+
+    <div class="space-y-8">
+
+      <!-- Tin 1 -->
+      <div class="flex gap-6 border-b pb-6 group cursor-pointer">
+        <img src="Imanges/new1.png"
+             class="w-40 h-28 object-cover rounded-lg flex-shrink-0 group-hover:scale-105 transition">
+
+        <div>
+          <a href="https://vnexpress.net/arteta-arsenal-se-tiep-tuc-song-voi-niem-tin-vo-dich-5010807.html" 
+				class="font-bold text-lg leading-snug group-hover:text-red-600 transition">
+            Arteta: 'Arsenal sẽ tiếp tục sống với niềm tin vô địch'
+          </a>
+          <p class="text-sm text-gray-600 mt-1">
+            Sau trận thua Man Utd ở Ngoại hạng Anh, HLV Mikel Arteta cùng các cầu thủ Arsenal khẳng định tinh thần chiến đấu đến cuối mùa giải.
+          </p>
+          <div class="flex items-center gap-4 text-xs text-gray-400 mt-2">
+            <span>⚽ Bóng đá</span>
+            
+          </div>
+        </div>
+      </div>
+
+      <!-- Tin 2 -->
+      <div class="flex gap-6 border-b pb-6 group cursor-pointer">
+        <img src="Imanges/new2.png"
+             class="w-40 h-28 object-cover rounded-lg flex-shrink-0 group-hover:scale-105 transition">
+
+        <div>
+          <a href="https://vnexpress.net/scholes-arsenal-co-the-la-nha-vo-dich-ngoai-hang-anh-te-nhat-5010810.html"
+				class="font-bold text-lg leading-snug group-hover:text-red-600 transition">
+            Scholes: 'Arsenal có thể là nhà vô địch Ngoại hạng Anh tệ nhất'
+          </a>
+          <p class="text-sm text-gray-600 mt-1">
+            Cựu tiền vệ Man Utd Paul Scholes cho rằng Arsenal sẽ là nhà vô địch kém thuyết phục nếu đăng quang mùa này.
+          </p>
+          <div class="flex items-center gap-4 text-xs text-gray-400 mt-2">
+            <span>⚽ Ngoại hạng Anh</span>
+            
+          </div>
+        </div>
+      </div>
+
+      <!-- Tin 3 -->
+      <div class="flex gap-6 border-b pb-6 group cursor-pointer">
+        <img src="Imanges/new3.png"
+             class="w-40 h-28 object-cover rounded-lg flex-shrink-0 group-hover:scale-105 transition">
+
+        <div>
+          <a href="https://vnexpress.net/ptpa-huy-dong-1-ty-usd-cai-to-quan-vot-5010744.html" class="font-bold text-lg leading-snug group-hover:text-red-600 transition">
+            PTPA huy động 1 tỷ USD cải tổ quần vợt
+          </a>
+          <p class="text-sm text-gray-600 mt-1">
+            Hiệp hội các tay vợt chuyên nghiệp do Novak Djokovic đồng sáng lập tìm kiếm nguồn đầu tư lớn để cải tổ hệ thống thi đấu.
+          </p>
+          <div class="flex items-center gap-4 text-xs text-gray-400 mt-2">
+            <span>🎾 Tennis</span>
+            
+          </div>
+        </div>
+      </div>
+
+      <!-- Tin 4 -->
+      <div class="flex gap-6 group cursor-pointer">
+        <img src="Imanges/new4.png"
+             class="w-40 h-28 object-cover rounded-lg flex-shrink-0 group-hover:scale-105 transition">
+
+        <div>
+          <a href="https://vnexpress.net/alcaraz-choi-dep-khi-lan-dau-vao-ban-ket-australia-mo-rong-5010798.html" class="font-bold text-lg leading-snug group-hover:text-red-600 transition">
+            Alcaraz chơi đẹp khi lần đầu vào bán kết Australia Mở rộng
+          </a>
+          <p class="text-sm text-gray-600 mt-1">
+            Tay vợt số một thế giới Carlos Alcaraz gây ấn tượng mạnh với lối chơi fair-play và bản lĩnh thi đấu.
+          </p>
+          <div class="flex items-center gap-4 text-xs text-gray-400 mt-2">
+            <span>🎾 Australia Open</span>
+            
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Xem thêm -->
+    <div class="text-center mt-12">
+      <button class="border-2 border-red-600 text-red-600 hover:bg-red-600 hover:text-white font-bold px-8 py-3 rounded-lg transition">
+        Xem thêm tin tức
+      </button>
+    </div>
+  </div>
+</section>
+
 
     <footer id="footer" class="bg-black text-white py-24 border-t  border-gray-200">
         <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-3 gap-12">
@@ -582,7 +812,9 @@ function toggleChat() {
 				  <i class="fab fa-tiktok"></i>
 				</a>
 			  </div>
+
 			</div>
+
 
         </div>
         <div class="text-center mt-12 pt-8 border-t border-gray-900 text-xs text-gray-500 uppercase tracking-widest">
